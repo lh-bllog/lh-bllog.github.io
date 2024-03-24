@@ -6,15 +6,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="博客分享：C语言笔记一C语言前三章一：%f与%lf的区别1.代表的数据类型不同，*%f代表单精度浮点型数据（float），%lf代表双精度浮点型数据（double）* 2.有效数字类型不同，单精度浮点数保证6位，部分7位，双精度浮点数有效数字保证15位，部分16位 3.所能表示数的范围不同，单精度浮点的表示范围：-3.40E+38+3.40E+38，双精度浮点的表示范围：-1.79E+308+1.">
+  <meta name="description" content="C语言博客分享本次分享内容为C语言的基础内容，包含一些基础知识如数据类型、符号、数据的输入与输出，还包含一些我认为较难的内容如%f与%lf、自增（自减）运算符、域宽。一：%f与%lf的区别1.代表的数据类型不同，*%f代表单精度浮点型数据（float），%lf代表双精度浮点型数据（double）* 2.有效数字类型不同，单精度浮点数保证6位，部分7位，双精度浮点数有效数字保证15位，部分16位 3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2024/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0%E4%B8%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="博客分享：C语言笔记一C语言前三章一：%f与%lf的区别1.代表的数据类型不同，*%f代表单精度浮点型数据（float），%lf代表双精度浮点型数据（double）* 2.有效数字类型不同，单精度浮点数保证6位，部分7位，双精度浮点数有效数字保证15位，部分16位 3.所能表示数的范围不同，单精度浮点的表示范围：-3.40E+38+3.40E+38，双精度浮点的表示范围：-1.79E+308+1.">
+<meta property="og:description" content="C语言博客分享本次分享内容为C语言的基础内容，包含一些基础知识如数据类型、符号、数据的输入与输出，还包含一些我认为较难的内容如%f与%lf、自增（自减）运算符、域宽。一：%f与%lf的区别1.代表的数据类型不同，*%f代表单精度浮点型数据（float），%lf代表双精度浮点型数据（double）* 2.有效数字类型不同，单精度浮点数保证6位，部分7位，双精度浮点数有效数字保证15位，部分16位 3">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-03-15T14:50:30.851Z">
-<meta property="article:modified_time" content="2024-03-16T15:52:21.868Z">
+<meta property="article:modified_time" content="2024-03-17T07:52:43.685Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -87,7 +87,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="博客分享：C语言笔记一"><a href="#博客分享：C语言笔记一" class="headerlink" title="博客分享：C语言笔记一"></a>博客分享：C语言笔记一</h1><h2 id="C语言前三章"><a href="#C语言前三章" class="headerlink" title="C语言前三章"></a>C语言前三章</h2><h3 id="一：-f与-lf的区别"><a href="#一：-f与-lf的区别" class="headerlink" title="一：%f与%lf的区别"></a>一：%f与%lf的区别</h3><p>1.<strong>代表的数据类型不同</strong>，*%f代表单精度浮点型数据（float），%lf代表双精度浮点型数据（double）*</p>
+        <h1 id="C语言博客分享"><a href="#C语言博客分享" class="headerlink" title="C语言博客分享"></a>C语言博客分享</h1><h3 id="本次分享内容为C语言的基础内容，包含一些基础知识如数据类型、符号、数据的输入与输出，还包含一些我认为较难的内容如-f与-lf、自增（自减）运算符、域宽。"><a href="#本次分享内容为C语言的基础内容，包含一些基础知识如数据类型、符号、数据的输入与输出，还包含一些我认为较难的内容如-f与-lf、自增（自减）运算符、域宽。" class="headerlink" title="本次分享内容为C语言的基础内容，包含一些基础知识如数据类型、符号、数据的输入与输出，还包含一些我认为较难的内容如%f与%lf、自增（自减）运算符、域宽。"></a><em>本次分享内容为C语言的基础内容，包含一些基础知识如数据类型、符号、数据的输入与输出，还包含一些我认为较难的内容如%f与%lf、自增（自减）运算符、域宽。</em></h3><h3 id="一：-f与-lf的区别"><a href="#一：-f与-lf的区别" class="headerlink" title="一：%f与%lf的区别"></a>一：%f与%lf的区别</h3><p>1.<strong>代表的数据类型不同</strong>，*%f代表单精度浮点型数据（float），%lf代表双精度浮点型数据（double）*</p>
 <p>2.<strong>有效数字类型不同</strong>，<em>单精度浮点数保证6位，部分7位，双精度浮点数有效数字保证15位，部分16位</em></p>
 <p>3.<strong>所能表示数的范围不同</strong>，<em>单精度浮点的表示范围：-3.40E+38<del>+3.40E+38，双精度浮点的表示范围：-1.79E+308</del>+1.79E+308</em></p>
 <h3 id="二-C语言中的符号如-n等"><a href="#二-C语言中的符号如-n等" class="headerlink" title="二:C语言中的符号如\n等"></a>二:C语言中的符号如\n等</h3><table>
@@ -302,7 +302,7 @@
 <td align="left">本输入项在读入后不赋给相应的变量</td>
 </tr>
 </tbody></table>
-<h3 id="六：自增（-）、自减（–）运算符"><a href="#六：自增（-）、自减（–）运算符" class="headerlink" title="六：自增（++）、自减（–）运算符"></a>六：自增（++）、自减（–）运算符</h3><h5 id="i-–i（在使用i之前，先使i的值加（减）1）"><a href="#i-–i（在使用i之前，先使i的值加（减）1）" class="headerlink" title="++i,–i（在使用i之前，先使i的值加（减）1）"></a>++i,–i（在使用i之前，先使i的值加（减）1）</h5><h5 id="i-i–（在使用i之后，使i的值加（减）1）"><a href="#i-i–（在使用i之后，使i的值加（减）1）" class="headerlink" title="i++,i–（在使用i之后，使i的值加（减）1）"></a>i++,i–（在使用i之后，使i的值加（减）1）</h5>
+<h3 id="六：自增（-）、自减（–）运算符"><a href="#六：自增（-）、自减（–）运算符" class="headerlink" title="六：自增（++）、自减（–）运算符"></a>六：自增（++）、自减（–）运算符</h3><h5 id="i-–i（在使用i之前，先使i的值加（减）1）"><a href="#i-–i（在使用i之前，先使i的值加（减）1）" class="headerlink" title="++i,–i（在使用i之前，先使i的值加（减）1）"></a>++i,–i（在使用i之前，先使i的值加（减）1）</h5><h5 id="i-i–（在使用i之后，使i的值加（减）1）"><a href="#i-i–（在使用i之后，使i的值加（减）1）" class="headerlink" title="i++,i–（在使用i之后，使i的值加（减）1）"></a>i++,i–（在使用i之后，使i的值加（减）1）</h5><h2 id="希望以上内容能对你有所帮助"><a href="#希望以上内容能对你有所帮助" class="headerlink" title="希望以上内容能对你有所帮助"></a><em>希望以上内容能对你有所帮助</em></h2>
       
     </div>
     <footer class="article-footer">
@@ -315,6 +315,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2024/03/24/3%E6%9C%8818%E6%97%A5-3%E6%9C%8824%E6%97%A5%E5%91%A8%E6%8A%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2024/03/10/3%E6%9C%884%E5%8F%B7-3%E6%9C%8810%E5%8F%B7%E5%91%A8%E6%8A%A5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -357,6 +366,10 @@
       <ul>
         
           <li>
+            <a href="/2024/03/24/3%E6%9C%8818%E6%97%A5-3%E6%9C%8824%E6%97%A5%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2024/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0%E4%B8%80/">(no title)</a>
           </li>
         
@@ -370,10 +383,6 @@
         
           <li>
             <a href="/2024/01/31/1%E6%9C%8822-1%E6%9C%8828%E5%91%A8%E6%8A%A5/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/22/1%E6%9C%8815-1%E6%9C%8828%E5%91%A8%E6%8A%A5/">(no title)</a>
           </li>
         
       </ul>
