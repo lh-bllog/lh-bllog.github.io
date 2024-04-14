@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="C语言常见问题概述：本次分享主要介绍我在C语言中提出的三个基础小问题一、头文件&lt;stdio.h&gt;与”stdio.h”的区别C语言包含头文件有两种写法#include &lt;stdio.h&gt;和#include “stdio”(#include后面可以不空格)，两种写法的区别如下：  #include &lt;头文件&gt; : 编译器只会从系统配置的库环境中去寻找头文件，不会搜索">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/04/14/C%E8%AF%AD%E8%A8%80%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C语言常见问题概述：本次分享主要介绍我在C语言中提出的三个基础小问题一、头文件&lt;stdio.h&gt;与”stdio.h”的区别C语言包含头文件有两种写法#include &lt;stdio.h&gt;和#include “stdio”(#include后面可以不空格)，两种写法的区别如下：  #include &lt;头文件&gt; : 编译器只会从系统配置的库环境中去寻找头文件，不会搜索">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8a9f3077e2c24c8ab073791db78ee5cb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d24ab4d8975040979229aa553bc095cf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/53ec6d878673451cb73947740a8edd72.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7251efecde5040ad9e26cedb132043f7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fb9c8eb459f344f4a33e6a424428c71d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e6f76f9abad946d99f1ce14c79f41e05.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0737a13fb99b4835b2ce11bc7926439d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1b6cf2b9273c4fe5bc23482915289357.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5b72d3967ea24a7a8dd5eb61f49cd5fc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/55430149177a4104a2e5687784f5e2b2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/caecb40d4c1b4430aaec45d62010c699.png">
+<meta property="article:published_time" content="2024-04-14T06:16:37.041Z">
+<meta property="article:modified_time" content="2024-04-14T07:24:55.351Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/8a9f3077e2c24c8ab073791db78ee5cb.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C语言常见问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/14/C%E8%AF%AD%E8%A8%80%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2024-04-14T06:16:37.041Z" itemprop="datePublished">2024-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言常见问题"><a href="#C语言常见问题" class="headerlink" title="C语言常见问题"></a>C语言常见问题</h1><h5 id="概述：本次分享主要介绍我在C语言中提出的三个基础小问题"><a href="#概述：本次分享主要介绍我在C语言中提出的三个基础小问题" class="headerlink" title="概述：本次分享主要介绍我在C语言中提出的三个基础小问题"></a><font color='magenta'>概述</font>：<em>本次分享主要介绍我在C语言中提出的三个基础小问题</em></h5><h3 id="一、头文件与”stdio-h”的区别"><a href="#一、头文件与”stdio-h”的区别" class="headerlink" title="一、头文件&lt;stdio.h&gt;与”stdio.h”的区别"></a>一、头文件&lt;stdio.h&gt;与”stdio.h”的区别</h3><p>C语言包含<font color='blue'>头文件</font>有两种写法#include &lt;stdio.h&gt;和#include “stdio”(#include后面可以不空格)，两种写法的区别如下：</p>
+<ol>
+<li>#include &lt;头文件&gt; : 编译器只会从系统配置的库环境中去寻找头文件，不会搜索当前文件夹。通常用于引用标准库头文件。</li>
+<li>#include “头文件” : 编译器会先从当前文件夹中寻找头文件,如果找不到则到系统默认库环境中去寻找。一般用于引用用户自己定义使用的头文件。</li>
+</ol>
+<p><strong>举例：</strong></p>
+<p>1.我们新建一个项目xx,只包含main.cpp一个文件</p>
+<p><img src="https://img-blog.csdnimg.cn/8a9f3077e2c24c8ab073791db78ee5cb.png" alt="img"></p>
+<p> 可以看到，无论是#include”stdio.h”还是#include&lt;stdio.h&gt;程序都能正常运行</p>
+<p><em>解析：1）使用#include&lt;stdio.h&gt;添加头文件时，编译器到标准库头文件中查找，发现stdio.h头文件，将其复制到当前行；2）而使用#include”stdio.h”添加头文件时，编译器先到当前项目所在的文件夹中查找stdio.h头文件，发现没有这个头文件，于是编译器到系统默认库环境中去寻找，发现stdio.h头文件，将其复制到当前行。这里展开的stdio.h头文件和#include&lt;stdio.h&gt;展开的头文件是同一个。</em></p>
+<p>2.在xx项目中添加一个头文件stdio.h，并使用#include”stdio.h”</p>
+<p><img src="https://img-blog.csdnimg.cn/d24ab4d8975040979229aa553bc095cf.png" alt="img"></p>
+<p> <img src="https://img-blog.csdnimg.cn/53ec6d878673451cb73947740a8edd72.png" alt="img"></p>
+<p>编译器报错，原因是printf未声明。</p>
+<p><em>解析：使用#include”stdio.h”添加头文件时，编译器先到当前项目所在的文件夹中查找stdio.h头文件，发现用户自定义的stdio.h头文件，于是编译器将其复制到当前行。这里展开的头文件是用户自定义的头文件，用户自定义的stdio.h头文件没声明printf函数，所以当然会报错。</em></p>
+<p>3.再往stdio.h文件里添加#include&lt;stdio.h&gt;</p>
+<p> <img src="https://img-blog.csdnimg.cn/7251efecde5040ad9e26cedb132043f7.png" alt="img"></p>
+<p>程序就能正常运行了。</p>
+<p><strong>附加：</strong></p>
+<p>1.stdio.h<br>定义了输入输出操作，包括标准格式化输入输出(scanf、printf)，文件格式化输入输出(fscanf、fprintf)，字符字符串输入输出(getchar、getsput、char、puts…)等等。</p>
+<p>一般情况下，C程序都会包含输入输出操作，因此这是最常用的头文件。此外涉及文件的操作也常常需要包含stdio.h头文件。</p>
+<p>2.stdlib.h<br>定义了几个通用功能，包括动态内存管理(malloc、free等)，随机数生成(rand、srand)，与环境的通信，整数算术，搜索，排序和转换。</p>
+<p>涉及链表的操作，需要该头文件。</p>
+<p>3.math.h<br>定义了三角函数、反三角函数、指数函数、对数函数、开平方sqrt()、开立方cbrt()、取绝对值fabs()等常见数学运算函数。</p>
+<p>&#x2F;&#x2F;注意：fabs参数为double类型，而abs参数为int类型。fabs是求实数的绝对值，abs是求整数的绝对值</p>
+<p>4.stdbool.h<br>定义了bool类型。</p>
+<p>在C99标准之前，C语言没有bool类型。C99标准中新增的头文件stdbool.h中引入了bool类型，与C++中的bool兼容。</p>
+<p>此外C99新增的关键字_Bool可以表示布尔类型。</p>
+<p>5.string.h<br>定义了操纵字符串和数组的函数。包括下列几个函数:</p>
+<p>char * strcpy ( char *destin, char *source);&#x2F;&#x2F;复制字符串</p>
+<p>char * strncpy ( char *dest, char *src, size_t n);&#x2F;&#x2F;将字符串src中最多n个字符复制到字符数组dest中</p>
+<p> char * strcat ( char *destin, char *source);&#x2F;&#x2F;连接字符串</p>
+<p>int strcmp ( char *str1, char *str2);&#x2F;&#x2F;看ASCII码，str1&gt;str2，返回值 &gt; 0；两串相等，返回0</p>
+<p>size_t strlen ( const char *s);&#x2F;&#x2F;求字符串的长度，从字符串的首地址开始到遇到第一个’\0’停止计数</p>
+<p>void swab ( char *from, char *to, int nbytes);&#x2F;&#x2F;交换字节</p>
+<h3 id="二、main与return-0"><a href="#二、main与return-0" class="headerlink" title="二、main与return 0"></a>二、main与return 0</h3><p>1.int main</p>
+<p> C99标准规定C语言main函数返回类型一定为int，并且只有两种写法：</p>
+<pre><code>    1）标准写法一(无参数)
+
+    int main(void) &#123; /* ... */ &#125;
+
+    在C++中，int main()和int main(void)没有任何区别。但是在C语言中，int main()是可以传入参数的，而int main(void)则不能传入参数。
+
+    2）标准写法二(带参数)
+
+    int main(int argc,char *argv[]) &#123; /* ... */ &#125; 
+
+    int main(int argc,char **argv) &#123; /* ... */ &#125; //与标准写法二等价
+
+    C语言允许main函数带参数，其中argc表示参数个数，argv[0]为程序的路径，argv[1]指向命令行中执行程序名后的第一个字符串，argv[2]指向第个字符串...以此类推。
+</code></pre>
+<p>2.void main</p>
+<p>void main()，这种写法在老版本的C语言代码中比较常见，不过现在的一些教材中仍存在这种写法，事实上这种写法是错误的、不规范的，因为C标准中从来没有规定void main()这种写法。</p>
+<p>但，有同学会说：“我尝试了void main()，是可以使用的。”的确，有的编译器比如VC6.0(C89)是支持void main这种写法的，但并非所有编译器都是如此，很多编译器是不支持这种写法的，比如codeblocks(如下图)。所以为了程序的可移植性，最好不要采用void main这种写法。</p>
+<p>3.return 0</p>
+<p>作用是返回整数0给操作系统，表示程序正常运行结束了。由于C99规定C语言的main函数一定是int类型，也就是说main函数会返回一个整数。如果返回0，则代表程序正常退出；如果返回值非0，则表示程序出现了异常。这个返回值在操作系统的命令行窗口是可见的。（注意一下main函数返回值是返回给操作系统的，只要你设置返回值了，并不会影响你当前所编写程序的执行。）</p>
+<p>有时即使我们忘了写return 0，程序也能正常运行，这是因为C99 规定编译器要自动在生成的目标文件中加入return 0。但是要注意，vc6.0编译器并不会自动为你加上return 0(可能因为vc6.0是98年的产品，所以不支持这个特性)，这时编译器会报错。所以，我们平时在写代码的过程中，一定要养成给main函数设置返回值的习惯。</p>
+<h3 id="三、-i与i-的详解"><a href="#三、-i与i-的详解" class="headerlink" title="三、++i与i++的详解"></a>三、++i与i++的详解</h3><p>一、++i与i++<br>1.引例<br>对于如下程序，其输出结果是什么</p>
+<p>#include &lt;stdio.h&gt;<br>int main()<br>{<br>    int i&#x3D;1,a&#x3D;0,b&#x3D;0;<br>    a&#x3D;i++;<br>    b&#x3D;++i;<br>    printf(“i&#x3D;%d,a&#x3D;%d,b&#x3D;%d\n”,i,a,b);<br>    return 0;<br>}</p>
+<p><img src="https://img-blog.csdnimg.cn/fb9c8eb459f344f4a33e6a424428c71d.png" alt="img"></p>
+<p>解析：</p>
+<p>a&#x3D;i++;等价于a&#x3D;i;i&#x3D;i+1;</p>
+<p>b&#x3D;++i等价于i&#x3D;i+1;b&#x3D;i;</p>
+<p>通俗地讲，i++是先赋值再自增，++i是先自增再赋值</p>
+<p>2.(i++)+(i++)+(i++)与(++i)+(++i)+(++i)<br>那么，如果一条语句中有多个i++&#x2F;++i呢？例如： </p>
+<p>#include &lt;stdio.h&gt;<br>int main()<br>{<br>    int i&#x3D;2,j&#x3D;2,a&#x3D;0,b&#x3D;0;<br>    a&#x3D;(i++)+(i++)+(i++);<br>    b&#x3D;(++j)+(++j)+(++j);<br>    printf(“i&#x3D;%d,j&#x3D;%d,a&#x3D;%d,b&#x3D;%d\n”,i,j,a,b);<br>    return 0;<br>}<br>       <em>首先明确一点，多个++之间的和运算没有统一的定义，也就是说在不同编译环境下其结果有可能不同</em>。</p>
+<p>在codeblocks编译器下(gcc&#x2F;g++)：</p>
+<p><img src="https://img-blog.csdnimg.cn/e6f76f9abad946d99f1ce14c79f41e05.png" alt="img"></p>
+<p>解析：</p>
+<p>我们可以从结果来猜测运算的情况：</p>
+<p>a&#x3D;(i++)+(i++)+(i++)&#x3D;2+3+4&#x3D;9</p>
+<p>b&#x3D;(++j)+(++j)+(++j)&#x3D;4+4+5&#x3D;13</p>
+<p>1)初始化时：i &lt;- 2，j &lt;- 2</p>
+<p>2)对于多个表达式相加的情况，gcc是从左往右累加的，并且是两个表达式两个表达式地加。</p>
+<p>3)在执行a&#x3D;(i++)+(i++)+(i++)时，会以(i++)为单位把i的值传送回来再自增，运算过程就是(2+3)+4&#x3D;5+4&#x3D;9;a &lt;- 9;</p>
+<p>4)执行b&#x3D;(++j)+(++j)+(++j)时，</p>
+<p>遇到第一个(++j)，j先自增一次(j&#x3D;3)；在遇到“+”时，不会先把j的值传送回来，而是先计算加法运算的第二个操作数，于是遇到第二个(++j)，j自增一次(j&#x3D;4)，此时j的值(4)才传送回来进行加法运算，这时右边的表达式相当于(4+4)+(++j)&#x3D;8+(++j)；接着遇到第二个“+”，就先进行第三个(++j)的运算，j再自增一次(j&#x3D;5)，传送回j的值(5)之后才进行加法运算，即8+5&#x3D;13;a &lt;- 13;</p>
+<p>在vs编译器下：</p>
+<p><img src="https://img-blog.csdnimg.cn/0737a13fb99b4835b2ce11bc7926439d.png" alt="img"></p>
+<p>解析：</p>
+<p>我们可以从结果来猜测运算的情况：</p>
+<p>a&#x3D;(i++)+(i++)+(i++)&#x3D;2+2+2&#x3D;6</p>
+<p>b&#x3D;(++j)+(++j)+(++j)&#x3D;4+4+5&#x3D;13</p>
+<p>1)初始化时：i &lt;- 2，j &lt;- 2</p>
+<p>2)在执行a&#x3D;(i++)+(i++)+(i++)时，vs会以整个赋值语句为单位，先用i的初始值进行运算，待赋值语句结束后，才对i进行三次自增，即2+2+2&#x3D;6;a&lt;-6 ;i&#x3D;i+1;i&#x3D;i+1;i&#x3D;i+1;</p>
+<p>3)执行b&#x3D;(++j)+(++j)+(++j)时，vs与gcc相同，在遇到“+”时，不会先把j的值传送回来，而是先对加法的第二个操作数进行运算，待参与加法的第二个操作数运算完成后才传送回j的值，运算过程为(4+4)+5&#x3D;13;b &lt;- 13;</p>
+<p>在TC编译器下：</p>
+<p>如果有多个表达式参与和运算，则先计算各个表达式，再进行加运算</p>
+<p>如果i和j的初始值都为2，则</p>
+<p>a&#x3D;(i++)+(i++)+(i++)&#x3D;2+2+2&#x3D;6，</p>
+<p>b&#x3D;(++j)+(++j)+(++j)&#x3D;5+5+5&#x3D;15</p>
+<pre><code>    a(b)在不同编译器中运算的结果不同，主要是因为变量i(j)传值回来的时间不同，以及多个表达式进行和运算时执行的方式不同(例如gcc和vs执行多表达式的和预算时，只能先计算左边两个表达式的和，等计算出和以后再计算该和与第三个表达式的和，以此类推；而TC可以同时进行多个表达式的加法运算)。
+
+    此外注意：在C程序的实际执行过程中，并不是直接一条一条高级语言地执行，我们会先对C代码进行预编译，然后编译成汇编代码，汇编代码经汇编生成二进制代码，二进制代码经链接生成可执行文件，最后我们才运行这个可执行文件。所以本质上a(b)在不同编译器中运算的结果不同，是因为对应语句生成的汇编代码不同。
+</code></pre>
+<p>3.总结<br>        我们不推荐类似(i++)+(i++)+(i++)多个自增表达式相加的写法。因为这类写法的实现没有统一的定义，在不同的编译环境下可能有不同的结果。</p>
+<p>二、函数中的++<br>1.printf中的++<br>#include &lt;stdio.h&gt;<br>int main()<br>{<br>    int i&#x3D;0,a&#x3D;0,b&#x3D;0;<br>    i&#x3D;1;<br>    printf(“a&#x3D;%d,i&#x3D;%d\n”,a&#x3D;i++,i);<br>    i&#x3D;1;<br>    printf(“b&#x3D;%d,i&#x3D;%d\n”,b&#x3D;++i,i);<br>    return 0;<br>}<br>codeblocks：</p>
+<p><img src="https://img-blog.csdnimg.cn/1b6cf2b9273c4fe5bc23482915289357.png" alt="img"></p>
+<p>vs：</p>
+<p><img src="https://img-blog.csdnimg.cn/5b72d3967ea24a7a8dd5eb61f49cd5fc.png" alt="img"></p>
+<p>可以看到printf中的++也是一个不明确的行为 </p>
+<p>2.++作为函数的参数<br>#include &lt;stdio.h&gt;<br>void f(int i1,int i2,int * pi){<br>    printf(“f(%d,%d)在函数体中,i在内存中存储的值为%d\n”,i1,i2,*pi);<br>    return;<br>}<br>int main()<br>{<br>    int i&#x3D;0;<br>    f(i++,i++,&amp;i);<br>    i&#x3D;0;<br>    f(++i,++i,&amp;i);<br>    return 0;<br>}<br> codeblocks：</p>
+<p><img src="https://img-blog.csdnimg.cn/55430149177a4104a2e5687784f5e2b2.png" alt="img"></p>
+<p>vs：</p>
+<p><img src="https://img-blog.csdnimg.cn/caecb40d4c1b4430aaec45d62010c699.png" alt="img"></p>
+<p>可以看到，i++作为参数传递时也是一个不明确的行为</p>
+<p>3.总结<br>        在调用printf或者其他函数时，我们要避免在函数的参数表达式中使用自增运算符++。尽量在函数调用语句的前一条语句或后一条语句完成对变量值的修改，同时也可以考虑使用i&#x3D;i+1替代++i作为参数。</p>
+<p><font color='RedOrange'>结束</font>：<em>此次分享结束，内容涉及少但详尽，还请见谅</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/04/14/C%E8%AF%AD%E8%A8%80%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="cluz7bfs10000bkuk4bmy36u7" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/03/24/3%E6%9C%8818%E6%97%A5-3%E6%9C%8824%E6%97%A5%E5%91%A8%E6%8A%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/04/14/C%E8%AF%AD%E8%A8%80%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/24/3%E6%9C%8818%E6%97%A5-3%E6%9C%8824%E6%97%A5%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/15/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0%E4%B8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/10/3%E6%9C%884%E5%8F%B7-3%E6%9C%8810%E5%8F%B7%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/03/2%E6%9C%8826%E5%8F%B7-3%E6%9C%883%E5%8F%B7%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
