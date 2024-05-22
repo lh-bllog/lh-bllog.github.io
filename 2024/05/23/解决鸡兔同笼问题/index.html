@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="鸡兔同笼问题概述：本次分享的是解决鸡兔同笼问题，对于这种基础的问题，但我打算分别用Java，c语言，python来解决 问题:输入鸡和兔的总数和总腿数，来计算兔子和鸡的各个数量。一、Javaimport java.util.Scanner;&#x2F;** *已知鸡和兔的总数量为n,总腿数为m。 *输入n和m,依次输出鸡和兔的数目， *如果无解，则输出“No answer”*&#x2F;publi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/05/23/%E8%A7%A3%E5%86%B3%E9%B8%A1%E5%85%94%E5%90%8C%E7%AC%BC%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="鸡兔同笼问题概述：本次分享的是解决鸡兔同笼问题，对于这种基础的问题，但我打算分别用Java，c语言，python来解决 问题:输入鸡和兔的总数和总腿数，来计算兔子和鸡的各个数量。一、Javaimport java.util.Scanner;&#x2F;** *已知鸡和兔的总数量为n,总腿数为m。 *输入n和m,依次输出鸡和兔的数目， *如果无解，则输出“No answer”*&#x2F;publi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-22T18:01:42.497Z">
+<meta property="article:modified_time" content="2024-05-22T18:38:17.727Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-解决鸡兔同笼问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/23/%E8%A7%A3%E5%86%B3%E9%B8%A1%E5%85%94%E5%90%8C%E7%AC%BC%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2024-05-22T18:01:42.497Z" itemprop="datePublished">2024-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="鸡兔同笼问题"><a href="#鸡兔同笼问题" class="headerlink" title="鸡兔同笼问题"></a>鸡兔同笼问题</h1><p>概述：本次分享的是解决鸡兔同笼问题，对于这种基础的问题，但我打算分别用Java，c语言，python来解决</p>
+<h3 id="问题-输入鸡和兔的总数和总腿数，来计算兔子和鸡的各个数量。"><a href="#问题-输入鸡和兔的总数和总腿数，来计算兔子和鸡的各个数量。" class="headerlink" title="问题:输入鸡和兔的总数和总腿数，来计算兔子和鸡的各个数量。"></a><font color="red">问题:</font>输入鸡和兔的总数和总腿数，来计算兔子和鸡的各个数量。</h3><h3 id="一、Java"><a href="#一、Java" class="headerlink" title="一、Java"></a>一、<font color="blue">Java</font></h3><p>import java.util.Scanner;<br>&#x2F;**</p>
+<p>*已知鸡和兔的总数量为n,总腿数为m。</p>
+<p>*输入n和m,依次输出鸡和兔的数目，</p>
+<p>*如果无解，则输出“No answer”<br>*&#x2F;<br>public class blogs1 {<br>  public static void main(String[] args) {<br>     System.out.println(“输入鸡和兔的总数”);<br>     Scanner scanner1 &#x3D; new Scanner(System.in);<br>     double n &#x3D; scanner1.nextDouble();<br>     System.out.println(“输入总腿数”);<br>     Scanner scanner2 &#x3D; new Scanner(System.in);<br>     double m &#x3D; scanner2.nextDouble();<br>输入鸡和兔的总数量和总腿数</p>
+<p>double  a &#x3D; (m - (2 * n))&#x2F; 2;<br>       if(a % 1 &#x3D;&#x3D; 0){<br>           System.out.println(“兔子数量为:” + (int)a + “;” +”鸡的数量为：” + (int)(n-a));<br>       }else {<br>           System.out.println(“No answer”);<br>       }<br>   }<br>}</p>
+<h3 id="二、python"><a href="#二、python" class="headerlink" title="二、python"></a>二、<font color="green">python</font></h3><p>nHead &#x3D; int(input(“请输入鸡和兔的总只数：”))<br>nFoot &#x3D; int(input(“请输入鸡和兔的总脚数：”))<br>nChicken &#x3D; 0<br>nRabbit &#x3D; 0<br>result &#x3D; True<br>for i in range(nHead):<br>    nChicken &#x3D; i<br>    nRabbit &#x3D; nHead - i<br>    if (2 * nChicken + 4*nRabbit &#x3D;&#x3D; nFoot):<br>        break<br>else:<br>    result &#x3D; False<br>if result:<br>    print(“鸡有{}只，兔有{}只”.format(nChicken, nRabbit))<br>else:<br>    print(“无解”)</p>
+<h3 id="三、C语言"><a href="#三、C语言" class="headerlink" title="三、C语言"></a>三、<font color="orange">C语言</font></h3><p>#include &lt;stdio.h&gt;<br>int main()<br>{<br>    int heads,feet,x,y;<br>    &#x2F;&#x2F;定义x为鸡的数量，y为兔子的数量<br>    scanf(“%d%d”,&amp;heads,&amp;feet);<br>    x&#x3D;(4*heads-feet)&#x2F;2;<br>    &#x2F;&#x2F;计算出鸡的数量<br>    y&#x3D;heads-x;<br>    &#x2F;&#x2F;计算出兔子的数量<br>    printf(“%d %d”,x,y);<br>    return 0;<br>}</p>
+<p>针对<font color="red"><ins>鸡兔同笼</ins></font>问题，我们可以用举例的方法解决，也可以用方程来解决鸡兔同笼</p>
+<p>#内容简单，但基础，有用，易理解</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/23/%E8%A7%A3%E5%86%B3%E9%B8%A1%E5%85%94%E5%90%8C%E7%AC%BC%E9%97%AE%E9%A2%98/" data-id="clwi63mw30000usukcsbr5kif" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/05/19/5%E6%9C%8813%E5%8F%B7-5%E6%9C%8819%E5%8F%B7%E5%91%A8%E6%8A%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/23/%E8%A7%A3%E5%86%B3%E9%B8%A1%E5%85%94%E5%90%8C%E7%AC%BC%E9%97%AE%E9%A2%98/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/19/5%E6%9C%8813%E5%8F%B7-5%E6%9C%8819%E5%8F%B7%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/12/5%E6%9C%886%E5%8F%B7-5%E6%9C%8812%E5%8F%B7%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/06/4%E6%9C%8829-5%E6%9C%885%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/28/4%E6%9C%8822-4%E6%9C%8828%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
